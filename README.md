@@ -1,19 +1,58 @@
 # Turtle Race
 
+![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
+
+## Table of Contents
+
+- [Turtle Race](#turtle-race)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Live Demo](#live-demo)
+  - [Gameplay Demo](#gameplay-demo)
+  - [Why I Built This](#why-i-built-this)
+  - [Technology](#technology)
+  - [Features](#features)
+  - [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [How to Play](#how-to-play)
+  - [Deployment](#deployment)
+  - [Future Improvements](#future-improvements)
+  - [License](#license)
+  - [Acknowledgements](#acknowledgements)
+  - [Contact](#contact)
+
 ## Overview
 
-Turtle Race is a fun, interactive game that allows players to bet on which turtle will win a race. Initially inspired by a Python course project using the Turtle package, this project evolved into a full-fledged game using Pygame and Pygbag, making it deployable on the web for anyone to play.
+Turtle Race is a fun, basic, interactive game that allows players to bet on which turtle will win a race. Initially inspired by a Python course project using the Turtle package, this project evolved into a game using Pygame and Pygbag, making it deployable on the web for anyone to play.
+
+## Live Demo
+
+[Play Turtle Race Online](https://alanabf.github.io/Turtle-Race/)
+
+## Gameplay Demo
+
+![Turtle Race Demo](turtle-race.gif)
 
 ## Why I Built This
 
 The inspiration for this project came from my ongoing journey to master Python. After creating a simple Turtle Race using the Turtle package, I wanted to make the game accessible to a wider audience. This led me to explore Pygame for game development and Pygbag for deploying Python games on the web. The game you're about to experience is a recreation of that Turtle Race but with a more generalised approach using Pygame.
 
+## Technology
+
+![Version](https://img.shields.io/badge/version-1.0-blue)
+![Python](https://img.shields.io/badge/python-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white)
+![HTML Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+  
 ## Features
 
 - Interactive Gameplay: Players can place bets on which turtle (represented by colored squares) they think will win the race.
 - Randomised Race Mechanics: The race outcome is randomised, making each game unique.
 - Responsive Design: The game scales well to different screen sizes.
 - Web Deployment: Using Pygbag, the game can be played directly in a web browser without the need for any installations.
+
+## Getting Started
+
+You can play the Turtle Race game online or run it locally on your machine. Follow the instructions below to get started!
 
 ## Installation
 
@@ -71,71 +110,15 @@ pygbag main.py
 
 3 Access the Game:
 
-- Once deployed, your game will be accessible at https://yourusername.github.io/turtle-race/.
-
-## Example Code
-
-Here is the initial Turtle Race code that inspired this project:
-
-```python
-import random
-from turtle import Turtle, Screen
-from tkinter import messagebox
-import asyncio
-
-async def main():
-    def start_race():
-        is_race_on = False
-        screen = Screen()
-        screen.setup(width=500, height=400)
-        user_bet = screen.textinput(title="Make your bet", prompt="Which turtle will win the race? Choose a color: ")
-        colors = ["red", "orange", "yellow", "green", "blue", "purple"]
-        y_positions = [-100, -50, 0, 50, 100, 150]
-        all_turtles = []
-
-        for turtle_index in range(0, 6):
-            new_turtle = Turtle(shape="turtle")
-            new_turtle.color(colors[turtle_index])
-            new_turtle.penup()
-            new_turtle.goto(x=-230, y=y_positions[turtle_index])
-            all_turtles.append(new_turtle)
-            
-        if user_bet:
-            is_race_on = True
-
-        while is_race_on:
-            for turtle in all_turtles:
-                if turtle.xcor() > 230:
-                    is_race_on = False
-                    winning_color = turtle.pencolor()
-                    if winning_color == user_bet:
-                        print(f"You've won! The {winning_color} turtle is the winner!")
-                        messagebox.showinfo("You've won", f"The {winning_color} turtle is the winner!")
-                    else:
-                        print(f"You've lost! The {winning_color} turtle is the winner!")
-                        messagebox.showinfo("You've lost", f"The {winning_color} turtle is the winner!")
-                    play_again = messagebox.askyesno("Game Over", "Do you want to play again?")
-                    if play_again:
-                        screen.clearscreen()
-                        start_race()
-                    else:
-                        screen.bye()
-                    break
-                random_distance = random.randint(0, 10)
-                turtle.forward(random_distance)
-
-        screen.exitonclick()
-
-    start_race()
-    await asyncio.sleep(0)  # Very important, and keep it 0
-asyncio.run(main())
-```
+- Once deployed, your game will be accessible at [Turtle Race Game](https://alanabf.github.io/Turtle-Race/).
 
 ## Future Improvements
 
-- Add More Visual Effects: Enhance the race with animations and visual effects.
-- Improve User Interface: Create a more polished user interface with additional interaction elements.
-- Mobile Compatibility: Optimize the game for mobile devices.
+Here are some ideas for future development:
+
+- **Visual Effects:** Add animations and special effects to make the race more engaging.
+- **User Interface:** Improve the UI with more polished interaction elements.
+- **Mobile Compatibility:** Optimise the game for a better experience on mobile devices.
 
 ## License
 
@@ -145,3 +128,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Special thanks to the developers of Pygame and Pygbag for making game development and deployment accessible.
 Thanks to my course instructors and the Python community for ongoing support and resources.
+
+## Contact
+
+If you have any questions or suggestions, feel free to reach out:
+
+- Email: [alanabarrett-frew@hotmail.com](mailto:alanabarrett-frew@hotmail.com)
+- GitHub: [AlanaBF](https://github.com/AlanaBF)
